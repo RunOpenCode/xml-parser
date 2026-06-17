@@ -1,6 +1,6 @@
 {
     "name": "runopencode/xml-parser",
-    "description": "Library that wraps fast, low memory footprint, parsing of large XML documents in developer friendly manner.",
+    "description": "Library that enables fast, low memory footprint, parsing of large XML documents in developer friendly manner.",
     "license": "MIT",
     "authors": [
         {
