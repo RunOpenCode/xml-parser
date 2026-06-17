@@ -15,7 +15,7 @@ use function RunOpenCode\Component\Stream\stream_to_resource;
 /**
  * @template T
  *
- * @phpstan-type TransformerFunction = callable(\DOMNode, string=, string=): (T|null)
+ * @phpstan-type TransformerFunction = callable(\DOMNode, string=, string=): (iterable<T>|null|void)
  *
  * @implements XmlParserInterface<T>
  */
@@ -163,14 +163,19 @@ abstract class AbstractPullParser implements XmlParserInterface
                 $listener = $this->listeners[$name] ?? $this->listeners[$this->path] ?? null;
 
                 if (null !== $listener) {
+                    /** @var string $path */
+                    $path = $this->path;
                     $node = $reader->expand($document);
 
                     \assert($node instanceof \DOMNode);
 
-                    $result = $listener($node, $name, $this->path); // @phpstan-ignore-line
+                    /**
+                     * @var iterable<T>|null $result
+                     */
+                    $result = $listener($node, $name, $path);
 
                     if (null !== $result) {
-                        yield $result;
+                        yield from $result;
                     }
                 }
             }

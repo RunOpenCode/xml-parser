@@ -39,16 +39,22 @@ final class SampleParser extends AbstractPullParser
         $this->onElement('sample/items/item', $this->onItem(...));
     }
 
-    private function onHeader(\DOMNode $node): string
+    /**
+     * @return iterable<string>
+     */
+    private function onHeader(\DOMNode $node): iterable
     {
-        return \sprintf('Path: %s, content -> %s', $this->path, $node->textContent);
+        yield \sprintf('Path: %s, content -> %s', $this->path, $node->textContent);
     }
 
-    private function onItem(\DomNode $node): string
+    /**
+     * @return iterable<string>
+     */
+    private function onItem(\DomNode $node): iterable
     {
         $xpath = new \DOMXPath($node->ownerDocument ?? throw new \RuntimeException('Owner document is missing.'));
 
-        return \sprintf(
+        yield \sprintf(
             'Path: %s, content -> %s, %s',
             $this->path,
             \sprintf('name: %s', \trim($xpath->query('./Name', $node)?->item(0)?->textContent) ?: 'NONE'), // @phpstan-ignore-line
