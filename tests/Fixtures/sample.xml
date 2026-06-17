@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Sample>
+    <Header>This is the header</Header>
+    <Items>
+        <Item>
+            <Name Foo="10" Bar="true">foo</Name>
+            <Id>1</Id>
+        </Item>
+        <Item>
+            <Name Foo="10">bar</Name>
+            <Id>2</Id>
+        </Item>
+        <Item>
+            <Name Bar="true">baz</Name>
+            <Id>3</Id>
+        </Item>
+        <Item>
+            <Name/>
+            <Id/>
+        </Item>
+        <Item>
+            <Name>
+
+            </Name>
+            <Id>
+                
+            </Id>
+        </Item>
+    </Items>
+</Sample>

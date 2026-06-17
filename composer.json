@@ -1,0 +1,89 @@
+{
+    "name": "runopencode/xml-parser",
+    "description": "Library that wraps fast, low memory footprint, parsing of large XML documents in developer friendly manner.",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nikola Svitlica a.k.a TheCelavi",
+            "email": "thecelavi@runopencode.com"
+        }
+    ],
+    "require": {
+        "php": ">=8.4",
+        "ext-xml": "*",
+        "ext-xmlreader": "*",
+        "ext-dom": "*",
+        "ext-libxml": "*",
+        "psr/http-message": "^2.0",
+        "runopencode/stream": "^0.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "RunOpenCode\\Component\\XmlParser\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "path",
+            "url": "../../Component/Logger",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../Component/Dataset",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../Component/Bitmask",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../Component/Metadata",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../Bundle/MetadataBundle",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../Bundle/QueryBundle",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../Bundle/LoggerBundle",
+            "options": {
+                "symlink": false
+            }
+        },
+        {
+            "type": "path",
+            "url": "../../Component/Stream",
+            "options": {
+                "symlink": false
+            }
+        }
+    ],
+    "config": {
+        "sort-packages": true
+    },
+    "version": "0.2",
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
