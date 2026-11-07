@@ -64,7 +64,7 @@ abstract class AbstractPullParser implements XmlParserInterface
 
         try {
             $reader = \XMLReader::fromStream($resource);
-        } catch (\Exception $exception) {
+        } catch (\Throwable $exception) {
             throw new RuntimeException('Unable to open stream.', $exception);
         }
 
